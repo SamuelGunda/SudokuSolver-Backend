@@ -33,3 +33,4 @@ C:\Users\samue\CodingProjects\Personal\SudokuSolver.Api\SudokuSolver\obj\Debug\n
 C:\Users\samue\CodingProjects\Personal\SudokuSolver.Api\SudokuSolver\obj\Debug\net8.0\SudokuSolver.pdb
 C:\Users\samue\CodingProjects\Personal\SudokuSolver.Api\SudokuSolver\obj\Debug\net8.0\SudokuSolver.genruntimeconfig.cache
 C:\Users\samue\CodingProjects\Personal\SudokuSolver.Api\SudokuSolver\obj\Debug\net8.0\ref\SudokuSolver.dll
+C:\Users\samue\CodingProjects\Personal\SudokuSolver.Api\SudokuSolver\obj\Debug\net8.0\SudokuSolver.sourcelink.json

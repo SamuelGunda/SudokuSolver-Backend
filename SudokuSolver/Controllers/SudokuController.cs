@@ -20,8 +20,7 @@ public class SudokuController(ISudokuService sudokuService) : ControllerBase
         
         var sudoku = new Sudoku()
         {
-            Board = sudokuBoard,
-            SudokuBoard = new int[9, 9]
+            Board = sudokuBoard
         };
         
         try
@@ -47,5 +46,19 @@ public class SudokuController(ISudokuService sudokuService) : ControllerBase
         }
         
         return Ok(sudoku);
+    }
+    
+    [HttpGet("solve/{id:int}")]
+    public async Task<IActionResult> SolveSudoku(int id)
+    {
+        try
+        {
+            var solvedSudoku = await sudokuService.SolveSudokuAsync(id);
+            return Ok(solvedSudoku);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 }

@@ -3,16 +3,16 @@
 public class Sudoku
 {
     public int Id { get; set; }
-    public string Board { get; set; }
+    public string Board { get; set; } 
     public string? Solution { get; set; }
-    public List<SudokuTile> Tiles { get; set; } = new();
+    public int[,] SudokuBoard = new int[9, 9];
     
     public SudokuDto ToDto()
     {
         return new SudokuDto
         {
             Board = Board,
-            Tiles = Tiles.Select(tile => tile.ToDto()).ToList(),
+            SudokuBoard = SudokuBoard,
         };
     }
 }
@@ -20,5 +20,5 @@ public class Sudoku
 public class SudokuDto
 {
     public string Board { get; set; }
-    public List<SudokuTileDto> Tiles { get; set; } = new();
+    public int[,] SudokuBoard { get; set; }
 }

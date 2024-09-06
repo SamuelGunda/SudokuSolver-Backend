@@ -21,7 +21,7 @@ public class SudokuController(ISudokuService sudokuService) : ControllerBase
         var sudoku = new Sudoku()
         {
             Board = sudokuBoard,
-            Tiles = []
+            SudokuBoard = new int[9, 9]
         };
         
         try
@@ -36,16 +36,16 @@ public class SudokuController(ISudokuService sudokuService) : ControllerBase
         }
     }
     
-    // [HttpGet("{id}")]
-    // public async Task<IActionResult> GetSudokuById(int id)
-    // {
-    //     var sudoku = await sudokuService.GetSudokuByIdAsync(id);
-    //     
-    //     if (sudoku == null)
-    //     {
-    //         return NotFound($"Sudoku with id '{id}' not found");
-    //     }
-    //     
-    //     return Ok(sudoku);
-    // }
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetSudokuById(int id)
+    {
+        var sudoku = await sudokuService.GetSudokuByIdAsync(id);
+        
+        if (sudoku == null)
+        {
+            return NotFound($"Sudoku with id '{id}' not found");
+        }
+        
+        return Ok(sudoku);
+    }
 }
